@@ -3,7 +3,8 @@ import java.awt.*;
 
 public class CadastroPessoa extends JFrame {
 
-    private JTextField txtCpf, txtNome, txtRg, txtOrgao, txtEmail, txtCep, txtUf, txtComp, txtMunicipio, txtLogradouro, txtNumero, txtComplemento, txtBairro, txtTelefone;
+    private JTextField txtCpf, txtNome, txtRg, txtOrgao, txtEmail, txtCep, txtUf, txtComp, txtMunicipio, txtLogradouro,
+            txtNumero, txtComplemento, txtBairro, txtTelefone;
     private JComboBox<String> comboTipo;
     private JCheckBox fornecedorCheck;
     private JRadioButton radioAtivo, radioInativo;
@@ -31,14 +32,16 @@ public class CadastroPessoa extends JFrame {
         lblTipo.setHorizontalAlignment(SwingConstants.CENTER);
         lblTipo.setBorder(BorderFactory.createLineBorder(Color.GRAY));
         lblTipo.setFont(new Font("Arial", Font.BOLD, 14));
+        lblTipo.setOpaque(true);
+        lblTipo.setBackground(Color.WHITE);
         add(lblTipo);
 
-        comboTipo = new JComboBox<>(new String[]{"Pessoa:", "Física", "Jurídica"});
+        comboTipo = new JComboBox<>(new String[] { "Pessoa:", "Física", "Jurídica" });
         comboTipo.setBounds(190, 70, 140, 30);
         comboTipo.setFont(fontePadrao);
         add(comboTipo);
 
-        JLabel lblCpf = new JLabel("CPF / CNPJ ...");
+        JLabel lblCpf = new JLabel("CPF / CNPJ");
         lblCpf.setBounds(340, 70, 140, 30);
         lblCpf.setHorizontalAlignment(SwingConstants.CENTER);
         lblCpf.setBorder(BorderFactory.createLineBorder(Color.GRAY));
@@ -134,11 +137,11 @@ public class CadastroPessoa extends JFrame {
         lblValorPais.setOpaque(true);
         lblValorPais.setBackground(new Color(201, 201, 201));
         lblValorPais.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-        lblValorPais.setHorizontalAlignment(SwingConstants.CENTER);
+        lblValorPais.setHorizontalAlignment(SwingConstants.LEFT);
         lblValorPais.setFont(fontePadrao);
         add(lblValorPais);
 
-        JLabel lblUf = new JLabel("UF ...");
+        JLabel lblUf = new JLabel("UF");
         lblUf.setBounds(490, 210, 140, 30);
         lblUf.setHorizontalAlignment(SwingConstants.CENTER);
         lblUf.setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -247,6 +250,10 @@ public class CadastroPessoa extends JFrame {
         radioInativo.setFont(fontePadrao);
         radioInativo.setBackground(Color.WHITE);
         add(radioInativo);
+
+        grupoSituacao = new ButtonGroup();
+        grupoSituacao.add(radioAtivo);
+        grupoSituacao.add(radioInativo);
 
         JButton btnConfirmar = new JButton("Confirmar");
         btnConfirmar.setBounds(40, 400, 120, 30);
